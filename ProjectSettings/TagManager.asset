@@ -7,9 +7,9 @@ TagManager:
   - Piece
   - Particle
   - CollisionPiece
-  - Platform
   - PlatformCurrent
   - PlatformNew
+  - PlatformOld
   layers:
   - Default
   - TransparentFX

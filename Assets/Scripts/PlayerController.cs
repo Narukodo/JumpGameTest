@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         positionRelativeToPlatform = currentPlatform.transform.InverseTransformPoint(transform.position);
         if (positionRelativeToPlatform.z > 0 && !newPlatformInstantiated) {
-            int platformIndex = (int)Mathf.Round(Random.Range(-0.5f, 3.49f));
+            int platformIndex = (int)Mathf.Round(Random.Range(-0.5f, 2.5f));
             Bounds newPlatformBounds = platformList[platformIndex].GetComponent<MeshRenderer>().bounds;
             Bounds currentPlatformBounds = currentPlatform.GetComponent<MeshRenderer>().bounds;
             SpawnPlatform(platformIndex, transform.position + new Vector3(0, 0, newPlatformBounds.extents.z * 2 + currentPlatformBounds.extents.z));
@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag.StartsWith("Platform")) {
             if(other.gameObject.tag != currentPlatform.tag) {
+                SendMessageUpwards("cleanUpObject", currentPlatform);
                 currentPlatform = other.gameObject;
                 currentPlatform.tag = "PlatformCurrent";
                 newPlatformInstantiated = false;
