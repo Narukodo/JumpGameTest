@@ -10,10 +10,8 @@ Trying out:
 ## Getting Started
 Feel free to clone the repo and start playing.
 
-## Bugs
-- Platform spawning calculations are off and therefore kind of buggy. This is currently in progress
-
 ## Upcoming features
 - More points
 - Platforms spawn in more randomized locations
+- Blocker platforms
 - Points will be displayed soon
