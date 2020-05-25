@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             int platformIndex = (int)Mathf.Round(Random.Range(-0.5f, 3.49f));
             Bounds newPlatformBounds = platformList[platformIndex].GetComponent<MeshRenderer>().bounds;
             Bounds currentPlatformBounds = currentPlatform.GetComponent<MeshRenderer>().bounds;
-            SpawnPlatform(1, transform.position + new Vector3(0, 0, newPlatformBounds.extents.z * 2 + currentPlatformBounds.extents.z));
+            SpawnPlatform(platformIndex, transform.position + new Vector3(0, 0, newPlatformBounds.extents.z * 2 + currentPlatformBounds.extents.z));
         }
     }
 
